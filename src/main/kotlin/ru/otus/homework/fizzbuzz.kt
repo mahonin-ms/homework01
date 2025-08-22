@@ -7,10 +7,8 @@ fun fizzbuzz(n: Int): Array<String> {
     var isDivisionBy5 = false
 
     for(currentValue in 0.rangeUntil(n)) {
-        if(currentValue != 0) {
-            isDivisionBy3 = currentValue % 3 == 0
-            isDivisionBy5 = currentValue % 5 == 0
-        }
+        isDivisionBy3 = currentValue % 3 == 0
+        isDivisionBy5 = currentValue % 5 == 0
 
         strings += if(isDivisionBy3 && isDivisionBy5 || currentValue == 0){
             "FizzBuzz"
