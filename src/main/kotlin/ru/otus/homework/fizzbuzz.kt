@@ -1,26 +1,11 @@
 package ru.otus.homework
 
 
-fun fizzbuzz(n: Int): Array<String> {
-    var strings: Array<String> = emptyArray()
-    var isDivisionBy3 = false
-    var isDivisionBy5 = false
-
-    for(currentValue in 0.rangeUntil(n)) {
-        isDivisionBy3 = currentValue % 3 == 0
-        isDivisionBy5 = currentValue % 5 == 0
-
-        strings += if(isDivisionBy3 && isDivisionBy5 || currentValue == 0){
-            "FizzBuzz"
-        } else if(isDivisionBy3){
-            "Fizz"
-        } else if(isDivisionBy5){
-            "Buzz"
-        } else {
-            currentValue.toString()
+fun fizzbuzz(n: Int): Array<String> = Array(n){ i ->
+        when {
+            i == 0 || (i % 3 == 0 && i % 5 == 0) -> "FizzBuzz"
+            i % 3 == 0 -> "Fizz"
+            i % 5 == 0 -> "Buzz"
+            else -> i.toString()
         }
-
-    }
-
-    return strings
 }
